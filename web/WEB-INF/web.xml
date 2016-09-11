@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <error-page>
+        <error-code>404</error-code>
+        <location>/errors/404.html</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/errors/500.html</location>
+    </error-page>
+    <context-param>
+        <param-name>DownloadsDir</param-name>
+        <param-value>/Users/nikitos/Downloads/</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Slic3rDir</param-name>
+        <param-value>/Applications/</param-value>
+    </context-param>
+</web-app>

@@ -1,0 +1,82 @@
+.main{
+	background-color: rgb(255, 90, 85);
+	font-family: "Marker Felt";
+	margin-right: 10%;
+	margin-left: 20px;
+}
+.center_p{
+	font-size: 36px;
+	text-align: center;
+}
+.center_m{
+	font-size: 18px;
+	vertical-align: middle;
+	text-align: center;
+}
+.pctr{
+	width:450px;
+	height: 450px;
+	border-width: 2px;
+	border-color: rgb(112, 212, 252);
+	border-style: solid;
+	margin-right: 0px;
+	background-color: rgb(206, 46, 42);
+}
+.fon{
+	display: none;
+	opacity: 0.8;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(1, 1, 1, 0.725);
+	z-index: 300;
+	overflow: auto
+}
+.fon2{
+	display: none;
+	opacity: 0.8;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(1, 1, 1, 0.725);
+	z-index: 100;
+	overflow: auto
+}
+.dwnld{
+	margin: 50px auto;
+	display: none;
+	z-index: 400;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 30%;
+	bottom: 0;
+	text-align: center;
+
+}
+.up_panel{
+	margin-left: -5px;
+	vertical-align: top;
+}
+
+.buy_form{
+	opacity: 0.9;
+	display: none;
+	z-index: 200;
+	position: fixed;
+	left: 15%;
+	right: 15%;
+	top: 20px;
+	bottom: 20px;
+	background-color: white;
+	padding-right: 5%;
+	padding-left: 5%;
+}
+.buy_form_val{
+	padding-bottom: 20px;
+	font-size: 20px;
+}
