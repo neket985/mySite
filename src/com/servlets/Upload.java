@@ -121,10 +121,10 @@ public class Upload extends HttpServlet {
 
         if (str == null) {
             is_new = 1;
-            cmd[0] = Slic3rDir + "slic3r "+ DownloadsDir + id + ".stl --load " + DownloadsDir + "config.ini";
+            cmd[0] = Slic3rDir + "slic3r-console.exe "+ DownloadsDir + id + ".stl --load " + DownloadsDir + "config.ini";
             cmd[0] = cmd[0] + " --fill_density " + fill_density;
             cmd[0] = cmd[0] + " --output " + DownloadsDir + "output.gcode";
-            cmd[1] = Slic3rDir + "slic3r " + DownloadsDir + id + ".stl --export-svg --output " + DownloadsDir + id + ".svg";
+            cmd[1] = Slic3rDir + "slic3r-console.exe " + DownloadsDir + id + ".stl --export-svg --output " + DownloadsDir + id + ".svg";
             Process proc = Runtime.getRuntime().exec(cmd[0]);
             try {
                 proc.waitFor();

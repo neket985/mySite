@@ -13,10 +13,10 @@
     </error-page>
     <context-param>
         <param-name>DownloadsDir</param-name>
-        <param-value>/Users/nikitos/Downloads/</param-value>
+        <param-value>D:/home/site/wwwroot/webapps/</param-value>
     </context-param>
     <context-param>
         <param-name>Slic3rDir</param-name>
-        <param-value>/Applications/</param-value>
+        <param-value>D:/home/site/wwwroot/webapps/</param-value>
     </context-param>
 </web-app>
