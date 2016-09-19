@@ -13,10 +13,10 @@
     </error-page>
     <context-param>
         <param-name>DownloadsDir</param-name>
-        <param-value>D:/home/site/wwwroot/webapps/</param-value>
+        <param-value>/var/lib/tomcat7/webapps/Downloads/</param-value>
     </context-param>
     <context-param>
         <param-name>Slic3rDir</param-name>
-        <param-value>D:/home/site/wwwroot/webapps/</param-value>
+        <param-value></param-value>
     </context-param>
 </web-app>

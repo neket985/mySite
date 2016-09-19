@@ -14,7 +14,7 @@ import static java.lang.System.out;
  * Created by nikitos on 06.09.16.
  */
 @WebListener
-public class SessionListener implements HttpSessionListener {
+public class SessionListener implements HttpSessionListener{
     @Override
     public void sessionCreated(HttpSessionEvent httpSessionEvent) {
 
@@ -24,7 +24,7 @@ public class SessionListener implements HttpSessionListener {
     public void sessionDestroyed(HttpSessionEvent httpSessionEvent) {
         String id = httpSessionEvent.getSession().getId();
         out.println("Session Destroy with id = " + id);
-        String cmd = "rm /Users/nikitos/Downloads/" + id + ".stl /Users/nikitos/Downloads/" + id + ".svg";
+        String cmd = "rm /var/lib/tomcat7/webapps/Downloads/" + id + ".stl /var/lib/tomcat7/webapps/Downloads/" + id + ".svg";
         Process proc = null;
         try {
             proc = Runtime.getRuntime().exec(cmd);

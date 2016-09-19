@@ -25,7 +25,7 @@ public class AboutUs extends HttpServlet {
                 "<head>\n" +
                 "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>\n" +
                 "    <link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\"/>\n" +
-                "    <title>3D печать</title>\n" +
+                "    <title>3dprintthis - 3d печать онлайн.</title>\n" +
                 "    <link rel=\"shortcut icon\" type=\"image/png\" href=\"resourses/favicon.ico\">\n" +
                 "\n" +
                 "</head>\n" +

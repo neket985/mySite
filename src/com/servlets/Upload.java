@@ -121,10 +121,10 @@ public class Upload extends HttpServlet {
 
         if (str == null) {
             is_new = 1;
-            cmd[0] = Slic3rDir + "slic3r-console.exe "+ DownloadsDir + id + ".stl --load " + DownloadsDir + "config.ini";
+            cmd[0] = Slic3rDir + "slic3r "+ DownloadsDir + id + ".stl --load " + DownloadsDir + "config.ini";
             cmd[0] = cmd[0] + " --fill_density " + fill_density;
             cmd[0] = cmd[0] + " --output " + DownloadsDir + "output.gcode";
-            cmd[1] = Slic3rDir + "slic3r-console.exe " + DownloadsDir + id + ".stl --export-svg --output " + DownloadsDir + id + ".svg";
+            cmd[1] = Slic3rDir + "slic3r " + DownloadsDir + id + ".stl --export-svg --output " + DownloadsDir + id + ".svg";
             Process proc = Runtime.getRuntime().exec(cmd[0]);
             try {
                 proc.waitFor();
@@ -152,7 +152,7 @@ public class Upload extends HttpServlet {
             proc.destroy();
             if (filament == null) {
                 System.out.println("Error: output error");
-                response.sendRedirect("errors/read-file.html");
+                response.sendRedirect("upload?start");
                 return;
             } else {
                 Process proc2 = Runtime.getRuntime().exec(cmd[1]);
@@ -216,6 +216,7 @@ public class Upload extends HttpServlet {
             }
         } else if (str.indexOf("start") >= 0) {
             Float s = (Float) request.getSession(false).getAttribute("filament");
+            //out.println("<meta name=\"yandex-verification\" content=\"ddc62aacae34549f\" />\n");
             if (s != null) {
                 response.sendRedirect("upload?layer=0");
                 return;
@@ -230,9 +231,13 @@ public class Upload extends HttpServlet {
                 "<head>\n" +
                 "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n" +
                 "    <link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\" />\n" +
-                "    <title>3D печать</title>\n" +
+                "    <title>3dprintthis - 3d печать онлайн.</title>\n" +
                 "    <link rel=\"shortcut icon\" type=\"image/png\" href=\"resourses/favicon.ico\">\n" +
-                "" +
+                "    <meta name=\"keywords\" content=\"3D печать, Печать на 3D принтере, Печать 3D модели," +
+                "    Распечатать 3D модель, печать модели, распечатать модель в москве," +
+                "    3dprintthis, 3d print, 3d printing, 3d модели для печати, 3d, стоимость 3d печати, рассчитать стоимость 3d печати, сколько стоит 3d печать," +
+                "    сколько стоит печать на 3d принтере, мастер-модель, изготовление на 3d принтере, услуги 3d печати, 3d print this, печать PLA\"/>\n" +
+                "    <meta name=\"description\" content=\"Быстрое 3d прототипирование. 3d печать на заказ. Услуги 3d печати не дорого.\"/>" +
                 "</head>\n" +
                 "<body class=\"main\" >" +
                 "<div style=\"text-align: center;\">" +
@@ -352,7 +357,7 @@ public class Upload extends HttpServlet {
                 "<div id=\"dwnld\" class=\"dwnld\"><img src=\"resourses/dwnld.png\"/>" +
                 "</div>" +
                 "</body>\n" +
-                "<script src='check.js'></script>" +
+                "<script src=\"check.js\"></script>" +
                 "</html>");
         out.close();
     }

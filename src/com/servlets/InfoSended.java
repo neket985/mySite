@@ -37,7 +37,7 @@ public class InfoSended extends HttpServlet {
         String No = null;
         try {
             DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/orderNum?useUnicode=true&characterEncoding=utf8", "root", "uVZQa7Nk");
+            Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/orderNum?useUnicode=true&characterEncoding=utf8", "root", "NUdx4RIA");
             PreparedStatement s = c.prepareStatement(INSERT_ORDER);
             s.setString(1, name);
             s.setString(2, id);
@@ -60,7 +60,9 @@ public class InfoSended extends HttpServlet {
         int cost = (int) (filament * 6 * 6 / 1000 + 51);
         String count = request.getParameter("count");
 
-        String content = "Деталь. В количестве " + count + " штук.\nСтоимостью " + cost + " руб. и временем выполнения заказа от " + (int) ((cost-50) / (60 * 12) + 1) + " до " + (int) ((cost-50) / (60 * 4) + 2) + " дней.\n" +
+        String content = "Деталь. В количестве " + count + " штук.\n" +
+                "Общей стоимостью (без доставки)" + cost*Integer.parseInt(count) + " руб.\n" + cost +
+                " руб/шт и временем выполнения заказа от " + (int) ((cost*Integer.parseInt(count)-50) / (60 * 12) + 1) + " до " + (int) ((cost*Integer.parseInt(count)-50) / (60 * 4) + 2) + " дней.\n" +
                 "Информация о клиенте:\n" +
                 "Имя: " + name +
                 "\nemail: " + email +
@@ -85,7 +87,7 @@ public class InfoSended extends HttpServlet {
                 "<head>\n" +
                 "    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>\n" +
                 "    <link rel=\"stylesheet\" type=\"text/css\" href=\"styles.css\"/>\n" +
-                "    <title>3D печать</title>\n" +
+                "    <title>3dprintthis - 3d печать онлайн.</title>\n" +
                 "    <link rel=\"shortcut icon\" type=\"image/png\" href=\"resourses/favicon.ico\">\n" +
                 "\n" +
                 "</head>\n" +
